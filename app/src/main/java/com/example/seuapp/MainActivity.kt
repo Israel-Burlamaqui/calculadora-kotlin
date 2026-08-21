@@ -104,16 +104,15 @@ fun TelaCalculadora(navController: NavController)
             val x = maxWidth * 0.8f
             val y = maxHeight * 0.2f
             Text("$entradaNumeroInteiro",
-                modifier = Modifier.size(x, y)
+                modifier = Modifier.size(x, y),
+                color = Color.White
             )
-
-
-
         }
 
         // Soma
         Button(onClick = {
             println("Soma")
+            entradaNumeroInteiro += "+"
         }, modifier = Modifier.offset(x = maxWidth * 0.1f, y = maxHeight * 0.3f)
         ) {
             Text("+")
@@ -122,6 +121,7 @@ fun TelaCalculadora(navController: NavController)
         // Diferença
         Button(onClick = {
             println("Diferença")
+            entradaNumeroInteiro += "-"
         }, modifier = Modifier.offset(x = maxWidth * 0.25f, y = maxHeight * 0.3f)
         ) {
             Text("-")
@@ -130,6 +130,7 @@ fun TelaCalculadora(navController: NavController)
         // Produto
         Button(onClick = {
             println("Produto")
+            entradaNumeroInteiro += "×"
         }, modifier = Modifier.offset(x = maxWidth * 0.4f, y = maxHeight * 0.3f)
         ) {
             Text("×")
@@ -138,6 +139,7 @@ fun TelaCalculadora(navController: NavController)
         // Razão
         Button(onClick = {
             println("Razão")
+            entradaNumeroInteiro += "÷"
         }, modifier = Modifier.offset(x = maxWidth * 0.55f, y = maxHeight * 0.3f)
         ) {
             Text("÷")
@@ -153,6 +155,95 @@ fun TelaCalculadora(navController: NavController)
 
         // ================================================
         // Entrada de números
+
+        Button(onClick = {
+            entradaNumeroInteiro += "1"
+        }, modifier = Modifier.offset(x = maxWidth * 0.1f, y = maxHeight * 0.4f)
+        ) {
+            Text("1")
+        }
+
+        Button(onClick = {
+            entradaNumeroInteiro += "2"
+        }, modifier = Modifier.offset(x = maxWidth * 0.25f, y = maxHeight * 0.4f)
+        ) {
+            Text("2")
+        }
+
+        Button(onClick =  {
+            entradaNumeroInteiro += "3"
+        }, modifier = Modifier.offset(x = maxWidth * 0.4f, y = maxHeight * 0.4f)
+        ) {
+            Text("3")
+        }
+
+        Button(onClick = {
+            entradaNumeroInteiro += "4"
+        }, modifier = Modifier.offset(x = maxWidth * 0.1f, y = maxHeight * 0.5f)
+        ) {
+            Text("4")
+        }
+
+        Button(onClick = {
+            entradaNumeroInteiro += "5"
+        }, modifier = Modifier.offset(x = maxWidth * 0.25f, y = maxHeight * 0.5f)
+        ) {
+            Text("5")
+        }
+
+        Button(onClick = {
+            entradaNumeroInteiro += "6"
+        }, modifier = Modifier.offset(x = maxWidth * 0.4f, y = maxHeight * 0.5f)
+        ) {
+            Text("6")
+        }
+
+        Button(onClick = {
+            entradaNumeroInteiro += "7"
+        }, modifier = Modifier.offset(x = maxWidth * 0.1f, y = maxHeight * 0.6f)
+        ) {
+            Text("7")
+        }
+
+        Button(onClick = {
+            entradaNumeroInteiro += "8"
+        }, modifier = Modifier.offset(x = maxWidth * 0.25f, y = maxHeight * 0.6f)
+        ) {
+            Text("8")
+        }
+
+        Button(onClick = {
+            entradaNumeroInteiro += "9"
+        }, modifier = Modifier.offset(x = maxWidth * 0.4f, y = maxHeight * 0.6f)
+        ) {
+            Text("9")
+        }
+
+        Button(onClick = {
+            entradaNumeroInteiro += "0"
+        }, modifier = Modifier.offset(x = maxWidth * 0.1f, y = maxHeight * 0.7f)
+        ) {
+            Text("0")
+        }
+
+        // ================================================
+        // Manipulação de entrada
+
+        Button(onClick = {
+            entradaNumeroInteiro = ""
+        }, modifier = Modifier.offset(x = maxWidth * 0.25f, y = maxHeight * 0.7f)
+        ) {
+            Text("C")
+        }
+
+        Button(onClick = {
+            var stringTemporaria = entradaNumeroInteiro.dropLast(1)
+            entradaNumeroInteiro = stringTemporaria
+        }, modifier = Modifier.offset(x = maxWidth * 0.4f, y = maxHeight * 0.7f)
+        ) {
+            Text("<-")
+        }
+
 
 
 
