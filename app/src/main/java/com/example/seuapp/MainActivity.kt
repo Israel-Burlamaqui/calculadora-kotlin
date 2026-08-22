@@ -112,7 +112,7 @@ fun TelaCalculadora(navController: NavController)
         // Soma
         Button(onClick = {
             println("Soma")
-            entradaNumeroInteiro += "+"
+            entradaNumeroInteiro += " + "
         }, modifier = Modifier.offset(x = maxWidth * 0.1f, y = maxHeight * 0.3f)
         ) {
             Text("+")
@@ -121,7 +121,7 @@ fun TelaCalculadora(navController: NavController)
         // Diferença
         Button(onClick = {
             println("Diferença")
-            entradaNumeroInteiro += "-"
+            entradaNumeroInteiro += " - "
         }, modifier = Modifier.offset(x = maxWidth * 0.25f, y = maxHeight * 0.3f)
         ) {
             Text("-")
@@ -130,7 +130,7 @@ fun TelaCalculadora(navController: NavController)
         // Produto
         Button(onClick = {
             println("Produto")
-            entradaNumeroInteiro += "×"
+            entradaNumeroInteiro += " × "
         }, modifier = Modifier.offset(x = maxWidth * 0.4f, y = maxHeight * 0.3f)
         ) {
             Text("×")
@@ -139,7 +139,7 @@ fun TelaCalculadora(navController: NavController)
         // Razão
         Button(onClick = {
             println("Razão")
-            entradaNumeroInteiro += "÷"
+            entradaNumeroInteiro += " ÷ "
         }, modifier = Modifier.offset(x = maxWidth * 0.55f, y = maxHeight * 0.3f)
         ) {
             Text("÷")
@@ -237,22 +237,56 @@ fun TelaCalculadora(navController: NavController)
         }
 
         Button(onClick = {
-            var stringTemporaria = entradaNumeroInteiro.dropLast(1)
-            entradaNumeroInteiro = stringTemporaria
+            val tamanho = entradaNumeroInteiro.length
+            if (entradaNumeroInteiro.takeLast(2) == ".0") {
+                var stringTemporaria = entradaNumeroInteiro.dropLast(2)
+                entradaNumeroInteiro = stringTemporaria
+            } else {
+                var stringTemporaria = entradaNumeroInteiro.dropLast(1)
+                entradaNumeroInteiro = stringTemporaria
+            }
         }, modifier = Modifier.offset(x = maxWidth * 0.4f, y = maxHeight * 0.7f)
         ) {
             Text("<-")
         }
 
+        Button(onClick = {
+            //println("Igual a")
+            //entradaNumeroInteiro += "="
+
+            entradaNumeroInteiro = calcularResultado(entradaNumeroInteiro)
+        }, modifier = Modifier.offset(x = maxWidth * 0.7f, y = maxHeight * 0.3f)
+        ) {
+            Text("=")
+        }
 
 
 
     }
 }
-/*
-* Não, mas obrigado. O Android SDK possui alguma função para encerrar
-  forçadamente o aplicativo, como o exit(0) em C/C++ ?
-* */
+
+fun calcularResultado(expressaoNumeros: String): String
+{
+    var partesExpressaoNumeros = expressaoNumeros.split(" ")
+
+    val primeiroOperando = partesExpressaoNumeros[0].toDouble()
+    val operadorExpressao = partesExpressaoNumeros[1]
+    val segundoOperando = partesExpressaoNumeros[2].toDouble()
+
+
+    val resultado: String
+
+    when (operadorExpressao)
+    {
+        "+" ->  resultado = (primeiroOperando + segundoOperando).toString()
+        "-" ->  resultado = (primeiroOperando - segundoOperando).toString()
+        "×" ->  resultado = (primeiroOperando.toDouble() * segundoOperando.toDouble()).toString()
+        "÷" ->  resultado = (primeiroOperando.toDouble() / segundoOperando.toDouble()).toString()
+        else -> resultado = "NULL"
+    }
+
+    return resultado
+}
 
 @Composable
 fun MainLoop()
