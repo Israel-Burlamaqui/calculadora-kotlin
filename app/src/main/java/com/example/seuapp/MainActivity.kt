@@ -9,6 +9,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -23,8 +24,6 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.size
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -88,9 +87,6 @@ fun TelaApp(navController: NavController) {
 @Composable
 fun TelaCalculadora(navController: NavController)
 {
-    var numeroInteiro1 by remember { mutableStateOf(0) }
-    var numeroInteiro2 by remember { mutableStateOf(0) }
-
     var entradaNumeroInteiro by remember { mutableStateOf("") }
 
     BoxWithConstraints(modifier = Modifier.fillMaxSize()) {
@@ -122,9 +118,9 @@ fun TelaCalculadora(navController: NavController)
                 else ->
                     entradaNumeroInteiro += " + "
             }
-        }, modifier = Modifier.offset(x = maxWidth * 0.1f, y = maxHeight * 0.3f)
+        }, modifier = Modifier.offset(x = maxWidth * 0.35f, y = maxHeight * 0.4f)
         ) {
-            Text("+")
+            Text("+\n")
         }
 
         // Diferença / Sinal negativo:
@@ -145,27 +141,27 @@ fun TelaCalculadora(navController: NavController)
                 else ->
                     entradaNumeroInteiro += " - "
             }
-        }, modifier = Modifier.offset(x = maxWidth * 0.25f, y = maxHeight * 0.3f)
+        }, modifier = Modifier.offset(x = maxWidth * 0.35f, y = maxHeight * 0.5f)
         ) {
-            Text("-")
+            Text("-\n")
         }
 
         // Produto
         Button(onClick = {
             println("Produto")
             entradaNumeroInteiro += " × "
-        }, modifier = Modifier.offset(x = maxWidth * 0.4f, y = maxHeight * 0.3f)
+        }, modifier = Modifier.offset(x = maxWidth * 0.35f, y = maxHeight * 0.6f)
         ) {
-            Text("×")
+            Text("×\n")
         }
 
         // Razão
         Button(onClick = {
             println("Razão")
             entradaNumeroInteiro += " ÷ "
-        }, modifier = Modifier.offset(x = maxWidth * 0.55f, y = maxHeight * 0.3f)
+        }, modifier = Modifier.offset(x = maxWidth * 0.35f, y = maxHeight * 0.7f)
         ) {
-            Text("÷")
+            Text("÷\n")
         }
 
         // Voltar
@@ -181,70 +177,70 @@ fun TelaCalculadora(navController: NavController)
 
         Button(onClick = {
             entradaNumeroInteiro += "1"
-        }, modifier = Modifier.offset(x = maxWidth * 0.1f, y = maxHeight * 0.4f)
+        }, modifier = Modifier.offset(x = maxWidth * 0.5f, y = maxHeight * 0.4f)
         ) {
             Text("1\n")
         }
 
         Button(onClick = {
             entradaNumeroInteiro += "2"
-        }, modifier = Modifier.offset(x = maxWidth * 0.25f, y = maxHeight * 0.4f)
+        }, modifier = Modifier.offset(x = maxWidth * 0.65f, y = maxHeight * 0.4f)
         ) {
             Text("2\n")
         }
 
         Button(onClick =  {
             entradaNumeroInteiro += "3"
-        }, modifier = Modifier.offset(x = maxWidth * 0.4f, y = maxHeight * 0.4f)
+        }, modifier = Modifier.offset(x = maxWidth * 0.8f, y = maxHeight * 0.4f)
         ) {
             Text("3\n")
         }
 
         Button(onClick = {
             entradaNumeroInteiro += "4"
-        }, modifier = Modifier.offset(x = maxWidth * 0.1f, y = maxHeight * 0.5f)
+        }, modifier = Modifier.offset(x = maxWidth * 0.5f, y = maxHeight * 0.5f)
         ) {
             Text("4\n")
         }
 
         Button(onClick = {
             entradaNumeroInteiro += "5"
-        }, modifier = Modifier.offset(x = maxWidth * 0.25f, y = maxHeight * 0.5f)
+        }, modifier = Modifier.offset(x = maxWidth * 0.65f, y = maxHeight * 0.5f)
         ) {
             Text("5\n")
         }
 
         Button(onClick = {
             entradaNumeroInteiro += "6"
-        }, modifier = Modifier.offset(x = maxWidth * 0.4f, y = maxHeight * 0.5f)
+        }, modifier = Modifier.offset(x = maxWidth * 0.8f, y = maxHeight * 0.5f)
         ) {
             Text("6\n")
         }
 
         Button(onClick = {
             entradaNumeroInteiro += "7"
-        }, modifier = Modifier.offset(x = maxWidth * 0.1f, y = maxHeight * 0.6f)
+        }, modifier = Modifier.offset(x = maxWidth * 0.5f, y = maxHeight * 0.6f)
         ) {
             Text("7\n")
         }
 
         Button(onClick = {
             entradaNumeroInteiro += "8"
-        }, modifier = Modifier.offset(x = maxWidth * 0.25f, y = maxHeight * 0.6f)
+        }, modifier = Modifier.offset(x = maxWidth * 0.65f, y = maxHeight * 0.6f)
         ) {
             Text("8\n")
         }
 
         Button(onClick = {
             entradaNumeroInteiro += "9"
-        }, modifier = Modifier.offset(x = maxWidth * 0.4f, y = maxHeight * 0.6f)
+        }, modifier = Modifier.offset(x = maxWidth * 0.8f, y = maxHeight * 0.6f)
         ) {
             Text("9\n")
         }
 
         Button(onClick = {
             entradaNumeroInteiro += "0"
-        }, modifier = Modifier.offset(x = maxWidth * 0.1f, y = maxHeight * 0.7f)
+        }, modifier = Modifier.offset(x = maxWidth * 0.5f, y = maxHeight * 0.7f)
         ) {
             Text("0\n")
         }
@@ -254,10 +250,10 @@ fun TelaCalculadora(navController: NavController)
 
         Button(onClick = {
             entradaNumeroInteiro = ""
-        }, modifier = Modifier.offset(x = maxWidth * 0.25f, y = maxHeight * 0.7f)
+        }, modifier = Modifier.offset(x = maxWidth * 0.65f, y = maxHeight * 0.7f)
         ) {
             Text("C\n")
-        }
+        } 
 
         Button(onClick = {
             val tamanho = entradaNumeroInteiro.length
@@ -268,7 +264,7 @@ fun TelaCalculadora(navController: NavController)
                 var stringTemporaria = entradaNumeroInteiro.dropLast(1)
                 entradaNumeroInteiro = stringTemporaria
             }
-        }, modifier = Modifier.offset(x = maxWidth * 0.4f, y = maxHeight * 0.7f)
+        }, modifier = Modifier.offset(x = maxWidth * 0.8f, y = maxHeight * 0.7f)
         ) {
             Text("<-\n")
         }
@@ -276,7 +272,7 @@ fun TelaCalculadora(navController: NavController)
         // Resultado
         Button(onClick = {
             entradaNumeroInteiro = calcularResultado(entradaNumeroInteiro)
-        }, modifier = Modifier.offset(x = maxWidth * 0.7f, y = maxHeight * 0.3f)
+        }, modifier = Modifier.offset(x = maxWidth * 0.8f, y = maxHeight * 0.8f)
         ) {
             Text("=\n")
         }
@@ -292,7 +288,7 @@ fun TelaCalculadora(navController: NavController)
             if (ultimoChar?.isDigit() == true && !jaTemPonto) {
                 entradaNumeroInteiro += "."
             }
-        }, modifier = Modifier.offset(x = maxWidth * 0.7f, y = maxHeight * 0.4f)
+        }, modifier = Modifier.offset(x = maxWidth * 0.65f, y = maxHeight * 0.8f)
         ) {
             Text(".\n")
         }
