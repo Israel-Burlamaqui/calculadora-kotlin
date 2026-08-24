@@ -12,6 +12,7 @@ import androidx.navigation.compose.rememberNavController
 // Importar telas
 import com.example.seuapp.telas.TelaApp
 import com.example.seuapp.telas.TelaCalculadora
+import com.example.seuapp.telas.TelaCalculadoraCientifica
 import com.example.seuapp.telas.TelaDeLogin
 
 class MainActivity : ComponentActivity() {
@@ -54,6 +55,11 @@ fun MainLoop()
         composable("calculadora")
         {
             TelaCalculadora(navController = navController)
+        }
+
+        composable("calculadoraCientifica")
+        {
+            TelaCalculadoraCientifica(navController = navController)
         }
     }
 }

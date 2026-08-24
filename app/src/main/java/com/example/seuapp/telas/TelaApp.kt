@@ -26,6 +26,14 @@ fun TelaApp(navController: NavController)
             Text("Calculadora\n   simples")
         }
 
+        // Segunda Opção
+        Button(onClick = {
+            navController.navigate("calculadoraCientifica")
+        }, modifier = Modifier.offset(x = maxWidth * 0.335f, y = maxHeight * 0.5f)
+        ){
+            Text("Calculadora\n   científica")
+        }
+
         // Botão de voltar ao login
         Button(onClick = {
 
