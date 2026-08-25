@@ -5,11 +5,13 @@ fun calcularResultado(expressaoNumeros: String): String
     // Normaliza espaços ao redor dos operadores (ex: "2 + 3" → "2+3")
     val expressaoNormalizada = expressaoNumeros.replace(" ", "")
 
-    // Tokeniza a expressão separando números (com sinal e ponto decimal) e operadores.
-    // Regras de sinal:
-    //   '-' no início ou após um operador (+, -, ×, ÷) → sinal negativo do número
-    //   '+' no início ou após um operador               → sinal positivo (ignorado, é o padrão)
-    //   '+' ou '-' após um dígito ou '.'               → operador de adição/subtração
+    /*
+        Transforma a expressão em tokens, separando números (com sinal e ponto decimal) e operadores.
+        Regras de sinal:
+       '-' no início ou após um operador (+, -, ×, ÷) → sinal negativo do número
+       '+' no início ou após um operador               → sinal positivo (ignorado, é o padrão)
+       '+' ou '-' após um dígito ou '.'               → operador de adição/subtração
+     */
     val tokens = mutableListOf<String>()
     var numeroAtual = StringBuilder()
 
