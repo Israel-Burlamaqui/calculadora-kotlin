@@ -40,10 +40,7 @@ fun TelaCalculadoraCientifica(navController: NavController)
             )
         }
 
-        // Soma / Sinal positivo (Gemini):
-        //   - Após dígito ou '.': adiciona '+' como operador
-        //   - Após '-' de sinal: remove o '-' (torna o número positivo)
-        //   - Após outro operador ou expressão vazia: não faz nada (positivo é o padrão)
+
         Button(onClick = {
             val ultimoChar = entradaNumero.trimEnd().lastOrNull()
             when {
@@ -63,11 +60,6 @@ fun TelaCalculadoraCientifica(navController: NavController)
             Text("+\n")
         }
 
-        // Diferença / Sinal negativo (Gemini):
-        //   - Expressão vazia ou após operador ×÷: adiciona '-' como sinal do próximo número
-        //   - Após '+' de operador: substitui por '-'
-        //   - Após '-' de sinal: remove (toggle → positivo)
-        //   - Após dígito ou '.': adiciona '-' como operador
         Button(onClick = {
             val expressaoTrim = entradaNumero.trimEnd()
             val ultimoChar = expressaoTrim.lastOrNull()
@@ -318,7 +310,6 @@ fun TelaCalculadoraCientifica(navController: NavController)
         }
 
         Button(onClick = {
-            println("Resultado")
             entradaNumero = calculadoraCientifica(entradaNumero)
         }, modifier = Modifier.offset(x = maxWidth * 0.8f, y = maxHeight * 0.8f),
             colors = ButtonDefaults.buttonColors(
@@ -330,9 +321,6 @@ fun TelaCalculadoraCientifica(navController: NavController)
             Text("=\n")
         }
 
-        // Ponto decimal:
-        //   Adiciona '.' ao número atual apenas se ele ainda não contém um ponto
-        //   e o último caractere digitado é um dígito.
         Button(onClick = {
             val ultimoChar = entradaNumero.lastOrNull()
             // Segmento atual: tudo após o último espaço (separador de operador)

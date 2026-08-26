@@ -3,12 +3,12 @@ package com.example.seuapp.core
 import kotlin.math.ln
 import kotlin.math.pow
 
-/**
- * Calcula expressões sem parênteses da calculadora científica.
- *
- * Operadores científicos são binários: `base ^ expoente`,
- * `índice √ radicando` e `base log logaritmando`.
+/*
+  Calcula expressões sem parênteses da calculadora científica.
+  O resultado deve ser inserido nessa ordem: base ^ expoente,
+  índice √ radicando e base log logaritmando.
  */
+
 fun calculadoraCientifica(expressaoNumerica: String): String {
     val tokens = tokenizar(expressaoNumerica) ?: return "Erro"
     if (tokens.size < 3 || tokens.size % 2 == 0) return "Erro"
