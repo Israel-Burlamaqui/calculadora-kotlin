@@ -1,4 +1,5 @@
 package com.example.seuapp.core
+
 import androidx.activity.compose.BackHandler
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavController

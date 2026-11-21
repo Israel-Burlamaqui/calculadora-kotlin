@@ -54,7 +54,5 @@ fun TelaDeLogin(navController: NavController)
         ) {
             Text("Entrar")
         }
-
-
     }
 }
