@@ -1,5 +1,7 @@
 package com.example.seuapp.telas
 
+
+// Tema escuro
 import androidx.activity.compose.LocalActivity
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.fillMaxSize
@@ -9,10 +11,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
-
-// Tema escuro
 import com.example.seuapp.core.aplicarTemaEscuro
 import com.example.seuapp.core.checar_gesto_voltar
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.size
+
 
 @Composable
 fun TelaApp(navController: NavController)
