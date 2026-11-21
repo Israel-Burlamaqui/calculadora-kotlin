@@ -18,7 +18,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.seuapp.core.aplicarTemaEscuro
 import com.example.seuapp.core.calcularResultado
+
+import com.example.seuapp.core.checar_gesto_voltar
 
 @Composable
 fun TelaCalculadora(navController: NavController)
@@ -26,6 +29,9 @@ fun TelaCalculadora(navController: NavController)
     var entradaNumeroInteiro by remember { mutableStateOf("") }
 
     BoxWithConstraints(modifier = Modifier.fillMaxSize()) {
+
+        aplicarTemaEscuro()
+        checar_gesto_voltar("principal", navController)
 
         // Display
         Surface(color = Color.DarkGray,

@@ -10,6 +10,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 
+// Tema escuro
+import com.example.seuapp.core.aplicarTemaEscuro
+import com.example.seuapp.core.checar_gesto_voltar
+
 @Composable
 fun TelaApp(navController: NavController)
 {
@@ -17,6 +21,9 @@ fun TelaApp(navController: NavController)
     val context = LocalActivity.current
 
     BoxWithConstraints(modifier = Modifier.fillMaxSize()) {
+
+        aplicarTemaEscuro()
+        checar_gesto_voltar("sair", navController)
 
         // Primeira Opção
         Button(onClick = {

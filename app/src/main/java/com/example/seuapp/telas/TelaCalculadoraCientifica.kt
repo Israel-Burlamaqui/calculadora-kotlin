@@ -19,6 +19,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.seuapp.core.calculadoraCientifica
+import com.example.seuapp.core.aplicarTemaEscuro
+import com.example.seuapp.core.checar_gesto_voltar
 
 @Composable
 fun TelaCalculadoraCientifica(navController: NavController)
@@ -26,6 +28,9 @@ fun TelaCalculadoraCientifica(navController: NavController)
     var entradaNumero by remember { mutableStateOf("") }
 
     BoxWithConstraints(modifier = Modifier.fillMaxSize()) {
+
+        aplicarTemaEscuro()
+        checar_gesto_voltar("principal", navController)
 
         // Display
         Surface(color = Color.DarkGray,

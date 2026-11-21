@@ -9,10 +9,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 
+// Tema escuro
+import com.example.seuapp.core.aplicarTemaEscuro
+import com.example.seuapp.core.checar_gesto_voltar
+
 @Composable
 fun TelaDeLogin(navController: NavController)
 {
     BoxWithConstraints(modifier = Modifier.fillMaxSize()) {
+
+        aplicarTemaEscuro()
+        checar_gesto_voltar("sair", navController)
+
         Button(onClick = {
             // Ao clicar, navega para a rota "principal"
             navController.navigate("principal")
@@ -20,5 +28,7 @@ fun TelaDeLogin(navController: NavController)
         ) {
             Text("Entrar")
         }
+
+
     }
 }

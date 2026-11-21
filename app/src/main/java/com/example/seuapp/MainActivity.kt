@@ -1,22 +1,26 @@
 package com.example.seuapp
 
+// Importar telas
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-
-// Importar telas
 import com.example.seuapp.telas.TelaApp
 import com.example.seuapp.telas.TelaCalculadora
 import com.example.seuapp.telas.TelaCalculadoraCientifica
 import com.example.seuapp.telas.TelaDeLogin
+import com.example.seuapp.core.aplicarTemaEscuro
 
-class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
+class MainActivity : ComponentActivity()
+{
+    override fun onCreate(savedInstanceState: Bundle?)
+    {
         super.onCreate(savedInstanceState)
 
         // Expande a tela do app para além do entalhe
@@ -25,7 +29,7 @@ class MainActivity : ComponentActivity() {
 
         // O bloco de código abaixo seria a nossa amada "int main() { }"
         // do C e C++
-        setContent {
+        setContent{
             MainLoop()
         }
     }
@@ -37,8 +41,12 @@ fun MainLoop()
     // Cria e lembra o controlador de navegação
     val navController = rememberNavController()
 
+    aplicarTemaEscuro()
+
     // Define o "mapa" de navegação
-    NavHost(navController = navController, startDestination ="login")
+    NavHost(navController = navController, startDestination ="login",
+            enterTransition = { slideInHorizontally() },
+            exitTransition = { slideOutHorizontally() })
     {
         // Rota para a tela de login
         composable("login")
