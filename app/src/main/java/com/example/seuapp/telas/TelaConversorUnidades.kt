@@ -13,7 +13,9 @@ import androidx.navigation.NavController
 import com.example.seuapp.core.aplicarTemaEscuro
 import com.example.seuapp.core.checar_gesto_voltar
 import androidx.compose.material3.Button
+import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.Text
+import androidx.compose.material3.DropdownMenuItem
 
 @Composable
 fun TelaConversorUnidades(navController: NavController) {
@@ -24,6 +26,7 @@ fun TelaConversorUnidades(navController: NavController) {
         aplicarTemaEscuro()
         checar_gesto_voltar("principal", navController)
 
+
         Button(
             onClick = {
                 menuAberto = true
@@ -31,6 +34,29 @@ fun TelaConversorUnidades(navController: NavController) {
             modifier = Modifier.offset(x = maxWidth * 0.25f, y = maxHeight * 0.25f),
         ){
             Text(opcaoEscolhida)
+
+            DropdownMenu(
+                expanded = menuAberto,
+                onDismissRequest = { menuAberto = false}
+            ) {
+                DropdownMenuItem(
+                    text = { Text("Celsius")},
+                    onClick = {
+                        menuAberto = false
+                        opcaoEscolhida = "Celsius"
+                        // Ação ao pressionar
+                    }
+                )
+
+                DropdownMenuItem(
+                    text = {Text("Fahrenheit")},
+                    onClick = {
+                        menuAberto = false
+                        opcaoEscolhida = "Fahrenheit"
+                        // Ação ao pressionar
+                    }
+                )
+            }
         }
 
     }

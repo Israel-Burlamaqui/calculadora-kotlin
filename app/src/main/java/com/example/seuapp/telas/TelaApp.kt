@@ -41,7 +41,12 @@ fun TelaApp(navController: NavController)
         }
 
         // Terceira Opção
-
+        Button(onClick = {
+            navController.navigate("conversorUnidades")
+        }, modifier = Modifier.offset(x = maxWidth * 0.335f, y = maxHeight * 0.6f)
+        ){
+            Text("Conversor \nUnidades")
+        }
         // Botão de sair
         Button(onClick = {
 
