@@ -14,6 +14,7 @@ import com.example.seuapp.telas.TelaApp
 import com.example.seuapp.telas.TelaCalculadora
 import com.example.seuapp.telas.TelaCalculadoraCientifica
 import com.example.seuapp.telas.TelaDeLogin
+import com.example.seuapp.telas.TelaConversorUnidades
 import com.example.seuapp.core.aplicarTemaEscuro
 
 class MainActivity : ComponentActivity()
@@ -67,6 +68,11 @@ fun MainLoop()
         composable("calculadoraCientifica")
         {
             TelaCalculadoraCientifica(navController = navController)
+        }
+
+        composable("conversorUnidades")
+        {
+            TelaConversorUnidades(navController = navController)
         }
     }
 }
