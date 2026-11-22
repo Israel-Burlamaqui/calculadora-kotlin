@@ -40,7 +40,9 @@ fun TelaApp(navController: NavController)
             Text("Calculadora\n   científica")
         }
 
-        // Botão de voltar ao login
+        // Terceira Opção
+
+        // Botão de sair
         Button(onClick = {
 
             // Encerra todas as telas e o aplicativo corretamente
