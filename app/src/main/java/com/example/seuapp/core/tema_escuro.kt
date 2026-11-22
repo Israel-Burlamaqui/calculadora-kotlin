@@ -14,8 +14,8 @@ fun aplicarTemaEscuro() {
 
         Surface(
             Modifier.fillMaxSize(),
-            color = Color.Black,
-            contentColor = Color.Black
+            color = Color(red = 0.1f, green = 0.1f, blue = 0.1f, alpha = 1f),
+            contentColor = Color(red = 0.1f, green = 0.1f, blue = 0.1f, alpha = 1f)
         )
         {
 

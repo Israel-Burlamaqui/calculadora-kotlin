@@ -3,7 +3,7 @@ import android.util.Log
 
 fun converterTemperatura(nomeUnidadeTemperatura: String, valorTemperatura: Float): Int
 {
-    Log.d("Aviso", "Temperatura selecionada: $nomeUnidadeTemperatura\n")
+    Log.d("Aviso", "Temperatura selecionada: Para $nomeUnidadeTemperatura\n")
     var resultado: Float = 0.0f
     if (nomeUnidadeTemperatura == "Fahrenheit")
     {

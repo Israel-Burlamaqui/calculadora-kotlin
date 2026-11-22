@@ -1,5 +1,6 @@
 package com.example.seuapp.core.entrada
 
+import android.util.Log
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.BoxWithConstraintsScope
 import androidx.compose.foundation.layout.offset
@@ -10,11 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
-import com.example.seuapp.core.calcularResultado
-import com.example.seuapp.core.calculadoraCientifica
 import com.example.seuapp.core.converterTemperatura
-import android.util.Log
 
 @Composable
 fun BoxWithConstraintsScope.BotoesConversorUnidades(
